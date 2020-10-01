@@ -85,7 +85,7 @@ class StockPriceCrawler(object):
                 if date_min <= self.start_date:
                     break
                 page += 1
-                time.sleep(0.1) # DELAY
+                time.sleep(0.01) # DELAY
             end_time_each = datetime.now()
             logger.info(f'수집을 종료합니다. (회사코드: {code}, 수집시간: {(end_time_each-start_time_each).seconds}초)')
         stock_price = pd.concat(result)
