@@ -16,7 +16,7 @@ file_handler = logging.FileHandler('log/stockpricecrawler.log')
 file_handler.setFormatter(log_formatter)
 logger.addHandler(file_handler)
 
-class StockPriceCrawler:
+class StockPriceCrawler(object):
     """
         Example
         -------
