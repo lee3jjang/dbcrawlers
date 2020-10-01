@@ -23,7 +23,7 @@ class StockPriceCrawler:
             >> spc = StockPriceCrawler()
             >> spc.set_code(['005830', '005930', '105560'])
             >> spc.set_daterange('2019-01-31', '2019-12-31')
-            >> spc.get_stock_price()
+            >> stock_price = spc.get_stock_price()
     """
 
     def __init__(self):
@@ -41,18 +41,28 @@ class StockPriceCrawler:
     def set_daterange(self, start, end, format='%Y-%m-%d'):
         """
             수집할 날짜 범위 설정
-            both days inclusive임
+            both days inclusive
 
             :params str start: 수집시작일
             :params str end: 수집종료일
             :params str format: start, end 입력 format
         """
+
         self.start_date = datetime.strptime(start, '%Y-%m-%d')
         self.end_date = datetime.strptime(end, '%Y-%m-%d')
         if self.start_date > self.end_date:
             raise Exception('날짜 범위 입력 오류')
 
     def get_stock_price(self):
+        """
+            설정된 범위에 따라 수집 수행
+            
+            :returns DataFrame: 수집된 주가 데이터프레임
+        """
+
+        if not all([hasattr(self, 'company_codes'), hasattr(self, 'start_date'), hasattr(self, 'end_date')]):
+            raise Exception('사전 프로세스 오류')
+
         start_time_total = datetime.now()
         result = []
         logger.info(f'입력정보 (회사코드: {self.company_codes}, 수집일자: {self.start_date.strftime("%Y.%m.%d")} ~ {self.end_date.strftime("%Y.%m.%d")})')
@@ -84,5 +94,5 @@ class StockPriceCrawler:
         stock_price = stock_price.query('기준일자 <= @self.end_date and 기준일자 >= @self.start_date').reset_index(drop=True)
         stock_price = stock_price[['기준일자', '회사코드', '종가', '시가', '고가', '저가', '거래량']]
         end_time_total = datetime.now()
-        logger.info(f'모든 수집을 종료합니다. (수집시간: {(end_time_total-start_time_total).seconds}초, 데이터수: {len(stock_price):,}개)')
+        logger.info(f'수집결과 (수집시간: {(end_time_total-start_time_total).seconds}초, 데이터수: {len(stock_price):,}개)')
         return stock_price
