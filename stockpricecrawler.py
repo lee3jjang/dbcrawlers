@@ -20,10 +20,10 @@ class StockPriceCrawler:
     """
         Example
         -------
-            >> spc = StockPriceCrawler()
-            >> spc.set_code(['005830', '005930', '105560'])
-            >> spc.set_daterange('2019-01-31', '2019-12-31')
-            >> stock_price = spc.get_stock_price()
+        >> spc = StockPriceCrawler()
+        >> spc.set_code(['005830', '005930', '105560'])
+        >> spc.set_daterange('2019-01-31', '2019-12-31')
+        >> stock_price = spc.get_stock_price()
     """
 
     def __init__(self):
