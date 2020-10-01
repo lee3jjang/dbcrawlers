@@ -1,9 +1,11 @@
+import os
 import time
 import logging
 import pandas as pd
 from datetime import datetime
 
 # 로깅 설정
+if not any([s == 'log' for s in os.listdir()]): os.mkdir('log')
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 log_formatter = logging.Formatter('[%(asctime)s - %(name)s - %(levelname)s] %(message)s')
@@ -51,13 +53,12 @@ class StockPriceCrawler:
             raise Exception('날짜 범위 입력 오류')
 
     def get_stock_price(self):
-        delay = 0.1
-        start_time = datetime.now()
-
+        start_time_total = datetime.now()
         result = []
-        logger.info(f'수집범위 (회사코드: {self.company_codes}, 수집일자: {self.start_date.strftime("%Y.%m.%d")} ~ {self.end_date.strftime("%Y.%m.%d")})')
+        logger.info(f'입력정보 (회사코드: {self.company_codes}, 수집일자: {self.start_date.strftime("%Y.%m.%d")} ~ {self.end_date.strftime("%Y.%m.%d")})')
         for code in self.company_codes:
-            logger.info(f'수집을 시작합니다. (code: {code})')
+            logger.info(f'수집을 시작합니다. (회사코드: {code})')
+            start_time_each = datetime.now()
             page = 1
             while(True):
                 url = f'https://finance.naver.com/item/sise_day.nhn?code={code}&page={page}'
@@ -74,14 +75,14 @@ class StockPriceCrawler:
                 if date_min <= self.start_date:
                     break
                 page += 1
-                time.sleep(delay)
-            logger.info(f'수집을 종료합니다. (code: {code})')
+                time.sleep(0.1) # DELAY
+            end_time_each = datetime.now()
+            logger.info(f'수집을 종료합니다. (회사코드: {code}, 수집시간: {(end_time_each-start_time_each).seconds}초)')
         stock_price = pd.concat(result)
         stock_price.columns = ['회사코드', '기준일자', '종가', '전일비', '시가', '고가', '저가', '거래량']
         stock_price['기준일자'] = pd.to_datetime(stock_price['기준일자'], format='%Y.%m.%d')
         stock_price = stock_price.query('기준일자 <= @self.end_date and 기준일자 >= @self.start_date').reset_index(drop=True)
         stock_price = stock_price[['기준일자', '회사코드', '종가', '시가', '고가', '저가', '거래량']]
-
-        end_time = datetime.now()
-        logger.info(f'모든 수집을 종료합니다. (수집시간: {(end_time-start_time).seconds}초, 데이터수: {len(stock_price):,}개)')
+        end_time_total = datetime.now()
+        logger.info(f'모든 수집을 종료합니다. (수집시간: {(end_time_total-start_time_total).seconds}초, 데이터수: {len(stock_price):,}개)')
         return stock_price
