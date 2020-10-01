@@ -52,12 +52,12 @@ class StockPriceCrawler:
 
     def get_stock_price(self):
         delay = 0.1
-        
         start_time = datetime.now()
 
         result = []
+        logger.info(f'수집범위 (회사코드: {self.company_codes}, 수집일자: {self.start_date.strftime("%Y.%m.%d")} ~ {self.end_date.strftime("%Y.%m.%d")})')
         for code in self.company_codes:
-            logger.info(f'데이터 수집을 시작합니다. (code: {code})')
+            logger.info(f'수집을 시작합니다. (code: {code})')
             page = 1
             while(True):
                 url = f'https://finance.naver.com/item/sise_day.nhn?code={code}&page={page}'
@@ -75,6 +75,7 @@ class StockPriceCrawler:
                     break
                 page += 1
                 time.sleep(delay)
+            logger.info(f'수집을 종료합니다. (code: {code})')
         stock_price = pd.concat(result)
         stock_price.columns = ['회사코드', '기준일자', '종가', '전일비', '시가', '고가', '저가', '거래량']
         stock_price['기준일자'] = pd.to_datetime(stock_price['기준일자'], format='%Y.%m.%d')
@@ -82,5 +83,5 @@ class StockPriceCrawler:
         stock_price = stock_price[['기준일자', '회사코드', '종가', '시가', '고가', '저가', '거래량']]
 
         end_time = datetime.now()
-        logger.info(f'데이터 수집을 종료합니다. (수집시간: {(end_time-start_time).seconds}초, 데이터수: {len(stock_price):,}개)')
+        logger.info(f'모든 수집을 종료합니다. (수집시간: {(end_time-start_time).seconds}초, 데이터수: {len(stock_price):,}개)')
         return stock_price
