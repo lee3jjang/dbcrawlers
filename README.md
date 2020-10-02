@@ -7,5 +7,3 @@
 * installer 만들기
 * github 페이지
 * logging 모듈 사용
-
-## 테스트
