@@ -7,10 +7,26 @@ WindowManager:
 
 <MainWindow>:
     name: "main"
-    
 
-    GridLayout:
-        rows: 2
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        # 상단
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: .15
+            Button:
+                text: '>'
+                size_hint_x: .15
+            Label:
+                text: '주가 데이터 수집기'
+                font_name: fontName
+                size_hint_x: .7
+            Button:
+                text: '설정'
+                font_name: fontName
+                size_hint_x: .15
 
         GridLayout:
             cols: 2
