@@ -5,8 +5,18 @@ import pandas as pd
 from utils import pd2db
 from kivy.app import App
 from kivy.lang import Builder
+from kivy.config import Config
 from kivy.uix.popup import Popup
 from kivy.uix.screenmanager import ScreenManager, Screen
+
+# 윈도우 환경설정
+WIDTH, HEIGHT = 144*3, 256*3
+Config.set('graphics', 'width', WIDTH)
+Config.set('graphics', 'height', HEIGHT)
+Config.set('graphics', 'position', 'custom')
+Config.set('graphics', 'left', 100)
+Config.set('graphics', 'top',  100)
+
 
 class MainWindow(Screen):
     pass

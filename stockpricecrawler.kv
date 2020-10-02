@@ -1,18 +1,23 @@
+#:import os os
+#:set fontName os.path.join(os.path.abspath('.'), 'fonts', 'NanumGothic.ttf')
+
 WindowManager:
     MainWindow:
     SecondWindow:
 
 <MainWindow>:
     name: "main"
+    
 
     GridLayout:
         rows: 2
-        
+
         GridLayout:
             cols: 2
 
             Label:
-                text: "password: "
+                text: "비밀번호: "
+                font_name: fontName
 
             TextInput:
                 id: pwd
