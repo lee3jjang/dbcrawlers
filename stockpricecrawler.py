@@ -33,7 +33,7 @@ class StockPriceCrawler(object):
         """
             수집할 주가 코드 설정
 
-            :param list company_code: 회사코드 list
+            :param list company_code: 종목코드 list
         """
         
         self.company_codes = company_codes
@@ -65,9 +65,9 @@ class StockPriceCrawler(object):
 
         start_time_total = datetime.now()
         result = []
-        logger.info(f'입력정보 (회사코드: {self.company_codes}, 수집일자: {self.start_date.strftime("%Y.%m.%d")} ~ {self.end_date.strftime("%Y.%m.%d")})')
+        logger.info(f'입력정보 (종목코드: {self.company_codes}, 수집일자: {self.start_date.strftime("%Y.%m.%d")} ~ {self.end_date.strftime("%Y.%m.%d")})')
         for code in self.company_codes:
-            logger.info(f'수집을 시작합니다. (회사코드: {code})')
+            logger.info(f'수집을 시작합니다. (종목코드: {code})')
             start_time_each = datetime.now()
             page = 1
             while(True):
@@ -79,7 +79,7 @@ class StockPriceCrawler(object):
                             break
                     except:
                         break
-                data.insert(0, '회사코드', code)
+                data.insert(0, '종목코드', code)
                 result.append(data)
                 date_min = datetime.strptime(data['날짜'].iloc[-1], '%Y.%m.%d')
                 if date_min <= self.start_date:
@@ -87,12 +87,12 @@ class StockPriceCrawler(object):
                 page += 1
                 time.sleep(0.01) # DELAY
             end_time_each = datetime.now()
-            logger.info(f'수집을 종료합니다. (회사코드: {code}, 수집시간: {(end_time_each-start_time_each).seconds}초)')
+            logger.info(f'수집을 종료합니다. (종목코드: {code}, 수집시간: {(end_time_each-start_time_each).seconds}초)')
         stock_price = pd.concat(result)
-        stock_price.columns = ['회사코드', '기준일자', '종가', '전일비', '시가', '고가', '저가', '거래량']
+        stock_price.columns = ['종목코드', '기준일자', '종가', '전일비', '시가', '고가', '저가', '거래량']
         stock_price['기준일자'] = pd.to_datetime(stock_price['기준일자'], format='%Y.%m.%d')
         stock_price = stock_price.query('기준일자 <= @self.end_date and 기준일자 >= @self.start_date').reset_index(drop=True)
-        stock_price = stock_price[['기준일자', '회사코드', '종가', '시가', '고가', '저가', '거래량']]
+        stock_price = stock_price[['기준일자', '종목코드', '종가', '시가', '고가', '저가', '거래량']]
         end_time_total = datetime.now()
         logger.info(f'수집결과 (수집시간: {(end_time_total-start_time_total).seconds}초, 데이터수: {len(stock_price):,}개)')
         return stock_price
