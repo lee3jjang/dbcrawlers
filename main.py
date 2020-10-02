@@ -23,6 +23,6 @@ if __name__ == '__main__':
     # company_codes.종목코드 = company_codes.종목코드.map('{:06d}'.format)
     # pd2db(conn, company_codes[['회사명', '종목코드']], 'TICKER', 'ignore')
 
-    # conn.close() 
-
+    # conn.close()
+    print("--end--")
     
