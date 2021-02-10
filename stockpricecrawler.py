@@ -1,6 +1,7 @@
 import os
 import time
 import logging
+import requests
 import pandas as pd
 from datetime import datetime
 
@@ -72,7 +73,11 @@ class StockPriceCrawler(object):
             page = 1
             while(True):
                 url = f'https://finance.naver.com/item/sise_day.nhn?code={code}&page={page}'
-                data = pd.read_html(url)[0].dropna()                
+                headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"}
+                res = requests.get(url, headers=headers, verify=False)
+                html = res.text
+                data = pd.read_html(html)[0].dropna()     
+                           
                 if page != 1:
                     try:
                         if data.iloc[-1, 0] == result[-1].iloc[-1, 0]:
