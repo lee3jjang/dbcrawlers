@@ -2,7 +2,7 @@ from setuptools import setup
 from os.path import abspath, join as pjoin, relpath, split
 
 DISTNAME = 'dbcrawlers'
-DESCRIPTION = 'DB Crawlers'
+DESCRIPTION = 'Crawlers for Insurance Risk Management'
 AUTHOR = 'lee3jjang'
 AUTHOR_EMAIL = 'lee3jjang@gmail.com'
 URL = 'https://github.com/lee3jjang/stockpricecrawler'
