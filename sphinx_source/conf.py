@@ -74,7 +74,7 @@ html_sidebars = {
 }
 
 html_theme_options = {
-    "nav_title": 'insrisk ' + release,
+    "nav_title": 'dbcrawlers ' + release,
     "nav_links": [
         {"href": "https://vm.dbins.co.kr", "title": "업무가상PC", "internal": False},
         {"href": "https://www.mdbins.com:8100", "title": "외부포탈", "internal": False},
@@ -86,7 +86,7 @@ html_theme_options = {
     'color_primary': 'blue',
     'color_accent': 'light-blue',
     'repo_url': 'https://github.com/lee3jjang/dbcrawlers',
-    'repo_name': 'insrisk',
+    'repo_name': 'dbcrawlers',
     'repo_type': 'github',
     'logo_icon': '&#xe80e',
     "master_doc": False,
