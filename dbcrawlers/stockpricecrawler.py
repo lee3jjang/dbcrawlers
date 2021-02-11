@@ -37,7 +37,7 @@ class StockPriceCrawler(object):
         Parameters
         ----------
         company_codes : list
-            종목코드 list
+            종목코드 목록
         """
         
         self.company_codes = company_codes
