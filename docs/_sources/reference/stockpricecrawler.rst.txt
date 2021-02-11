@@ -1,5 +1,5 @@
-Stock Price Crawler
-===================
+stockpricecrawler
+=================
 
 .. automodule:: dbcrawlers.stockpricecrawler
     :members:
