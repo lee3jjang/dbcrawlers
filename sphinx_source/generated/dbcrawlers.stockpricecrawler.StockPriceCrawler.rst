@@ -5,19 +5,18 @@ dbcrawlers.stockpricecrawler.StockPriceCrawler
 
 .. autoclass:: StockPriceCrawler
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
+      :toctree:
    
-      ~StockPriceCrawler.__init__
       ~StockPriceCrawler.get_stock_price
       ~StockPriceCrawler.set_code
       ~StockPriceCrawler.set_daterange
    
+   .. automethod:: set_code
+   .. automethod:: set_daterange
+   .. automethod:: get_stock_price
    
 
    

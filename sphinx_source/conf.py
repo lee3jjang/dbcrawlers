@@ -104,4 +104,4 @@ html_baseurl = 'https://lee3jjang.github.io/dbcrawlers/'
 
 numpydoc_show_class_members = False
 autosummary_generate = True
-# autosummary_imported_members = True
+autosummary_imported_members = True

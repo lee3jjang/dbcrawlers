@@ -54,7 +54,7 @@
   <script async src='https://www.google-analytics.com/analytics.js'></script>
   
   
-    <title>Introduction &#8212; dbcrawlers v0.0.1 문서</title>
+    <title>&lt;no title&gt; &#8212; dbcrawlers v0.0.1 문서</title>
     <link rel="stylesheet" href="_static/material.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -64,12 +64,9 @@
     <script src="_static/language_data.js"></script>
     <script src="_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="canonical" href="https://lee3jjang.github.io/dbcrawlers/index.html" />
     <link rel="index" title="색인" href="genindex.html" />
     <link rel="search" title="검색" href="search.html" />
-    <link rel="next" title="Installing statsmodels" href="install.html" />
   
    
 
@@ -106,7 +103,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">dbcrawlers v0.0.1</span>
-          <span class="md-header-nav__topic"> Introduction </span>
+          <span class="md-header-nav__topic"> &lt;no title&gt; </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -230,25 +227,6 @@
   
   
 
-  
-  <ul class="md-nav__list">
-    <li class="md-nav__item">
-    
-    
-      <a href="install.html" class="md-nav__link">Installing statsmodels</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="gettingstarted.html" class="md-nav__link">Getting started</a>
-      
-    
-    </li>
-  </ul>
-  
-
 </nav>
               </div>
             </div>
@@ -258,14 +236,7 @@
               <div class="md-sidebar__inner">
                 
 <nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#index--page-root" class="md-nav__link">Introduction</a>
-        </li>
-        <li class="md-nav__item"><a href="#citation" class="md-nav__link">Citation</a>
-        </li>
-        <li class="md-nav__item"><a href="#index" class="md-nav__link">Index</a>
-        </li>
     
 <li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/index.rst.txt">소스 보기</a> </li>
 
@@ -280,141 +251,7 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  <a class="reference internal image-reference" href="_images/logo.svg"><img alt="dbcrawlers" class="align-left" src="_images/logo.svg" width="50%"/></a>
-<p><span class="xref std std-ref">statsmodels</span> is a Python module that provides classes and functions for the estimation
-of many different statistical models, as well as for conducting statistical tests, and statistical
-data exploration. An extensive list of result statistics are available for each estimator.
-The results are tested against existing statistical packages to ensure that they are correct. The
-package is released under the open source Modified BSD (3-clause) license.
-The online documentation is hosted at <a class="reference external" href="https://www.statsmodels.org/">statsmodels.org</a>.</p>
-
-<h1 id="index--page-root">Introduction<a class="headerlink" href="#index--page-root" title="제목 주소">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> supports specifying models using R-style formulas and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrames.
-Here is a simple example using ordinary least squares:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="gp">In [2]: </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-
-<span class="gp">In [3]: </span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
-
-<span class="go"># Load data</span>
-<span class="gp">In [4]: </span><span class="n">dat</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_rdataset</span><span class="p">(</span><span class="s2">"Guerry"</span><span class="p">,</span> <span class="s2">"HistData"</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
-
-<span class="go"># Fit regression model (using the natural log of one of the regressors)</span>
-<span class="gp">In [5]: </span><span class="n">results</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">'Lottery ~ Literacy + np.log(Pop1831)'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">dat</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-
-<span class="go"># Inspect the results</span>
-<span class="gp">In [6]: </span><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
-<span class="go">                            OLS Regression Results                            </span>
-<span class="go">==============================================================================</span>
-<span class="go">Dep. Variable:                Lottery   R-squared:                       0.348</span>
-<span class="go">Model:                            OLS   Adj. R-squared:                  0.333</span>
-<span class="go">Method:                 Least Squares   F-statistic:                     22.20</span>
-<span class="go">Date:                    목, 11 2 2021   Prob (F-statistic):           1.90e-08</span>
-<span class="go">Time:                        23:58:30   Log-Likelihood:                -379.82</span>
-<span class="go">No. Observations:                  86   AIC:                             765.6</span>
-<span class="go">Df Residuals:                      83   BIC:                             773.0</span>
-<span class="go">Df Model:                           2                                         </span>
-<span class="go">Covariance Type:            nonrobust                                         </span>
-<span class="go">===================================================================================</span>
-<span class="go">                      coef    std err          t      P&gt;|t|      [0.025      0.975]</span>
-<span class="gt">-----------------------------------------------------------------------------------</span>
-<span class="n">Intercept</span>         <span class="mf">246.4341</span>     <span class="mf">35.233</span>      <span class="mf">6.995</span>      <span class="mf">0.000</span>     <span class="mf">176.358</span>     <span class="mf">316.510</span>
-<span class="n">Literacy</span>           <span class="o">-</span><span class="mf">0.4889</span>      <span class="mf">0.128</span>     <span class="o">-</span><span class="mf">3.832</span>      <span class="mf">0.000</span>      <span class="o">-</span><span class="mf">0.743</span>      <span class="o">-</span><span class="mf">0.235</span>
-<span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Pop1831</span><span class="p">)</span>   <span class="o">-</span><span class="mf">31.3114</span>      <span class="mf">5.977</span>     <span class="o">-</span><span class="mf">5.239</span>      <span class="mf">0.000</span>     <span class="o">-</span><span class="mf">43.199</span>     <span class="o">-</span><span class="mf">19.424</span>
-<span class="o">==============================================================================</span>
-<span class="ne">Omnibus</span>:                        3.713   Durbin-Watson:                   2.019
-<span class="n">Prob</span><span class="p">(</span><span class="n">Omnibus</span><span class="p">):</span>                  <span class="mf">0.156</span>   <span class="n">Jarque</span><span class="o">-</span><span class="n">Bera</span> <span class="p">(</span><span class="n">JB</span><span class="p">):</span>                <span class="mf">3.394</span>
-<span class="ne">Skew</span>:                          -0.487   Prob(JB):                        0.183
-<span class="ne">Kurtosis</span>:                       3.003   Cond. No.                         702.
-<span class="o">==============================================================================</span>
-
-<span class="ne">Warnings</span>:
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Standard</span> <span class="n">Errors</span> <span class="n">assume</span> <span class="n">that</span> <span class="n">the</span> <span class="n">covariance</span> <span class="n">matrix</span> <span class="n">of</span> <span class="n">the</span> <span class="n">errors</span> <span class="ow">is</span> <span class="n">correctly</span> <span class="n">specified</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>You can also use <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays instead of formulas:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="gp">In [8]: </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-
-<span class="go"># Generate artificial data (2 regressors + constant)</span>
-<span class="gp">In [9]: </span><span class="n">nobs</span> <span class="o">=</span> <span class="mi">100</span>
-
-<span class="gp">In [10]: </span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="n">nobs</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-
-<span class="gp">In [11]: </span><span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-
-<span class="gp">In [12]: </span><span class="n">beta</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">]</span>
-
-<span class="gp">In [13]: </span><span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-
-<span class="gp">In [14]: </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span> <span class="o">+</span> <span class="n">e</span>
-
-<span class="go"># Fit regression model</span>
-<span class="gp">In [15]: </span><span class="n">results</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-
-<span class="go"># Inspect the results</span>
-<span class="gp">In [16]: </span><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
-<span class="go">                            OLS Regression Results                            </span>
-<span class="go">==============================================================================</span>
-<span class="go">Dep. Variable:                      y   R-squared:                       0.222</span>
-<span class="go">Model:                            OLS   Adj. R-squared:                  0.206</span>
-<span class="go">Method:                 Least Squares   F-statistic:                     13.82</span>
-<span class="go">Date:                    목, 11 2 2021   Prob (F-statistic):           5.24e-06</span>
-<span class="go">Time:                        23:58:30   Log-Likelihood:                -15.979</span>
-<span class="go">No. Observations:                 100   AIC:                             37.96</span>
-<span class="go">Df Residuals:                      97   BIC:                             45.77</span>
-<span class="go">Df Model:                           2                                         </span>
-<span class="go">Covariance Type:            nonrobust                                         </span>
-<span class="go">==============================================================================</span>
-<span class="go">                 coef    std err          t      P&gt;|t|      [0.025      0.975]</span>
-<span class="gt">------------------------------------------------------------------------------</span>
-<span class="n">const</span>          <span class="mf">1.4335</span>      <span class="mf">0.069</span>     <span class="mf">20.851</span>      <span class="mf">0.000</span>       <span class="mf">1.297</span>       <span class="mf">1.570</span>
-<span class="n">x1</span>             <span class="mf">0.3056</span>      <span class="mf">0.099</span>      <span class="mf">3.084</span>      <span class="mf">0.003</span>       <span class="mf">0.109</span>       <span class="mf">0.502</span>
-<span class="n">x2</span>             <span class="mf">0.3540</span>      <span class="mf">0.098</span>      <span class="mf">3.603</span>      <span class="mf">0.000</span>       <span class="mf">0.159</span>       <span class="mf">0.549</span>
-<span class="o">==============================================================================</span>
-<span class="ne">Omnibus</span>:                       26.553   Durbin-Watson:                   2.036
-<span class="n">Prob</span><span class="p">(</span><span class="n">Omnibus</span><span class="p">):</span>                  <span class="mf">0.000</span>   <span class="n">Jarque</span><span class="o">-</span><span class="n">Bera</span> <span class="p">(</span><span class="n">JB</span><span class="p">):</span>                <span class="mf">5.650</span>
-<span class="ne">Skew</span>:                           0.101   Prob(JB):                       0.0593
-<span class="ne">Kurtosis</span>:                       1.853   Cond. No.                         4.75
-<span class="o">==============================================================================</span>
-
-<span class="ne">Warnings</span>:
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Standard</span> <span class="n">Errors</span> <span class="n">assume</span> <span class="n">that</span> <span class="n">the</span> <span class="n">covariance</span> <span class="n">matrix</span> <span class="n">of</span> <span class="n">the</span> <span class="n">errors</span> <span class="ow">is</span> <span class="n">correctly</span> <span class="n">specified</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>Have a look at <cite>dir(results)</cite> to see available results. Attributes are described in
-<cite>results.__doc__</cite> and results methods have their own docstrings.</p>
-
-
-<h1 id="citation">Citation<a class="headerlink" href="#citation" title="제목 주소">¶</a></h1>
-<p>Please use following citation to cite statsmodels in scientific publications:</p>
-<p>Seabold, Skipper, and Josef Perktold. 《<a class="reference external" href="http://conference.scipy.org/proceedings/scipy2010/pdfs/seabold.pdf">statsmodels: Econometric and statistical modeling with
-python.</a>》 <em>Proceedings
-of the 9th Python in Science Conference.</em> 2010.</p>
-<p>Bibtex entry:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@inproceedings</span><span class="p">{</span><span class="n">seabold2010statsmodels</span><span class="p">,</span>
-  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">statsmodels</span><span class="p">:</span> <span class="n">Econometric</span> <span class="ow">and</span> <span class="n">statistical</span> <span class="n">modeling</span> <span class="k">with</span> <span class="n">python</span><span class="p">},</span>
-  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Seabold</span><span class="p">,</span> <span class="n">Skipper</span> <span class="ow">and</span> <span class="n">Perktold</span><span class="p">,</span> <span class="n">Josef</span><span class="p">},</span>
-  <span class="n">booktitle</span><span class="o">=</span><span class="p">{</span><span class="mi">9</span><span class="n">th</span> <span class="n">Python</span> <span class="ow">in</span> <span class="n">Science</span> <span class="n">Conference</span><span class="p">},</span>
-  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2010</span><span class="p">},</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="install.html">Installing statsmodels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
-</ul>
-</div>
-
-
-<h1 id="index">Index<a class="headerlink" href="#index" title="제목 주소">¶</a></h1>
-<p><a class="reference internal" href="genindex.html"><span class="std std-ref">색인</span></a></p>
-<p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">모듈 목록</span></a></p>
-
-
+  
 
           </article>
         </div>
@@ -425,17 +262,6 @@ of the 9th Python in Science Conference.</em> 2010.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-          
-            <a href="install.html" title="Installing statsmodels"
-               class="md-flex md-footer-nav__link md-footer-nav__link--next"
-               rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
-                class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Installing statsmodels </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink"><i
-                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
           
         </a>
         
