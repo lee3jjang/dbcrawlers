@@ -90,8 +90,8 @@ html_theme_options = {
     'repo_type': 'github',
     'logo_icon': '&#xe80e',
     "master_doc": False,
-    'html_minify': True,
-    'css_minify': True,
+    'html_minify': False,
+    'css_minify': False,
     'version_dropdown': True,
     'google_analytics_account': 'UA-XXXXX',
     'version_info': {
@@ -102,6 +102,6 @@ html_theme_options = {
 
 html_baseurl = 'https://lee3jjang.github.io/dbcrawlers/'
 
-numpydoc_show_class_members = True
+numpydoc_show_class_members = False
 autosummary_generate = True
 autosummary_imported_members = True

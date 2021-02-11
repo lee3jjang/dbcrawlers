@@ -9,7 +9,7 @@ set BUILDDIR=docs
 rmdir /s /q %BUILDDIR%
 
 @REM 빌드
-%SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR%
+%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR%
 
 @REM docs/html 파일 및 폴더들을 docs로 이동
 for %%I in (%BUILDDIR%/html/*) do (

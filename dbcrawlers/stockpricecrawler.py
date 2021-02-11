@@ -27,12 +27,9 @@ class StockPriceCrawler(object):
     >>> spc.set_daterange('2019-01-31', '2019-12-31')
     >>> stock_price = spc.get_stock_price()
     """
-
-    def __init__(self):
-        pass
-        
+       
     def set_code(self, company_codes):
-        """주가를 수집할 회사의 회사코드 설정
+        """주가를 수집할 회사의 회사코드를 설정합니다.
 
         Parameters
         ----------
@@ -43,7 +40,7 @@ class StockPriceCrawler(object):
         self.company_codes = company_codes
         
     def set_daterange(self, start, end, format='%Y-%m-%d'):
-        """수집할 날짜 범위 설정
+        """수집할 날짜의 범위를 설정합니다.
             
         Parameters
         ----------
@@ -65,7 +62,7 @@ class StockPriceCrawler(object):
             raise Exception('날짜 범위 입력 오류')
 
     def get_stock_price(self):
-        """설정에 따라 수집 수행
+        """설정에 따라 수집을 수행합니다.
             
         Returns
         -------
