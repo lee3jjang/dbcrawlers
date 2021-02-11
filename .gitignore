@@ -1,0 +1,6 @@
+__pycache__
+log
+.vscode
+build
+dist
+dbcrawlers.egg-info
