@@ -1,4 +1,7 @@
 __pycache__
 log
-*.db-journal
 .vscode
+docs/build
+build
+dist
+dbcrawlers.egg-info
