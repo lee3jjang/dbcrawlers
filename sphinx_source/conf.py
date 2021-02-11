@@ -23,6 +23,8 @@ project = 'dbcrawlers'
 copyright = '2021, lee3jjang'
 author = 'lee3jjang'
 
+release = 'v0.0.1'
+
 
 # -- General configuration ---------------------------------------------------
 
@@ -31,6 +33,7 @@ author = 'lee3jjang'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    "sphinx.ext.githubpages",
     'nbsphinx',
     'sphinx.ext.autosummary',
     'IPython.sphinxext.ipython_console_highlighting',
@@ -69,3 +72,34 @@ html_static_path = ['_static']
 html_sidebars = {
     "**": ["globaltoc.html", "localtoc.html", "searchbox.html", "logo-text.html"]
 }
+
+html_theme_options = {
+    "nav_title": 'insrisk ' + release,
+    "nav_links": [
+        {"href": "https://vm.dbins.co.kr", "title": "업무가상PC", "internal": False},
+        {"href": "https://www.mdbins.com:8100", "title": "외부포탈", "internal": False},
+        {"href": "https://mail.dbins.co.kr", "title": "외부메일", "internal": False},
+    ],
+    "heroes": {
+        "index": "업무용 크롤러 라이브러리",
+    },
+    'color_primary': 'blue',
+    'color_accent': 'light-blue',
+    'repo_url': 'https://github.com/lee3jjang/dbcrawlers',
+    'repo_name': 'insrisk',
+    'repo_type': 'github',
+    'logo_icon': '&#xe80e',
+    "master_doc": False,
+    'html_minify': True,
+    'css_minify': True,
+    'version_dropdown': True,
+    'google_analytics_account': 'UA-XXXXX',
+    'version_info': {
+      "release": "",
+      "development": "devel",
+   },
+}
+
+html_baseurl = 'https://lee3jjang.github.io/dbcrawlers/'
+
+autosummary_generate = True
