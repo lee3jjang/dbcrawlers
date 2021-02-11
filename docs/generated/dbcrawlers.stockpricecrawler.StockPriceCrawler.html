@@ -67,6 +67,7 @@
     <link rel="canonical" href="https://lee3jjang.github.io/dbcrawlers/generated/dbcrawlers.stockpricecrawler.StockPriceCrawler.html" />
     <link rel="index" title="색인" href="../genindex.html" />
     <link rel="search" title="검색" href="../search.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="../index.html" />
   
    
 
@@ -220,6 +221,30 @@
   
   
 
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> dbcrawlers.stockpricecrawler.StockPriceCrawler </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">dbcrawlers.stockpricecrawler.StockPriceCrawler</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/generated/dbcrawlers.stockpricecrawler.StockPriceCrawler.rst.txt">소스 보기</a> </li>
+
+  </ul>
+</nav>
+      
+    
+    </li>
+  </ul>
+  
+
 </nav>
               </div>
             </div>
@@ -264,17 +289,34 @@
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price.html#dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price" title="dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stock_price</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price" title="dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stock_price</span></code></a>(self)</p></td>
 <td><p>설정에 따라 수집을 수행합니다.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="dbcrawlers.stockpricecrawler.StockPriceCrawler.set_code.html#dbcrawlers.stockpricecrawler.StockPriceCrawler.set_code" title="dbcrawlers.stockpricecrawler.StockPriceCrawler.set_code"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_code</span></code></a>(self, company_codes)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler.set_code" title="dbcrawlers.stockpricecrawler.StockPriceCrawler.set_code"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_code</span></code></a>(self, company_codes)</p></td>
 <td><p>주가를 수집할 회사의 회사코드를 설정합니다.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="dbcrawlers.stockpricecrawler.StockPriceCrawler.set_daterange.html#dbcrawlers.stockpricecrawler.StockPriceCrawler.set_daterange" title="dbcrawlers.stockpricecrawler.StockPriceCrawler.set_daterange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_daterange</span></code></a>(self, start, end[, format])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler.set_daterange" title="dbcrawlers.stockpricecrawler.StockPriceCrawler.set_daterange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_daterange</span></code></a>(self, start, end[, format])</p></td>
 <td><p>수집할 날짜의 범위를 설정합니다.</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price">
+<code class="sig-name descname">get_stock_price</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price" title="정의 주소">¶</a></dt>
+<dd><p>설정에 따라 수집을 수행합니다.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>DataFrame</dt><dd><p>수집된 주가 데이터프레임</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">경고</p>
+<p>company code와 date range 설정 후 실행해야 함</p>
+</div>
+</dd></dl>
 <dl class="method">
 <dt id="dbcrawlers.stockpricecrawler.StockPriceCrawler.set_code">
 <code class="sig-name descname">set_code</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">company_codes</em><span class="sig-paren">)</span><a class="headerlink" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler.set_code" title="정의 주소">¶</a></dt>
@@ -309,23 +351,6 @@
 <p>(start date, end date) both days inclusive</p>
 </div>
 </dd></dl>
-<dl class="method">
-<dt id="dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price">
-<code class="sig-name descname">get_stock_price</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price" title="정의 주소">¶</a></dt>
-<dd><p>설정에 따라 수집을 수행합니다.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>DataFrame</dt><dd><p>수집된 주가 데이터프레임</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">경고</p>
-<p>company code와 date range 설정 후 실행해야 함</p>
-</div>
-</dd></dl>
 </dd></dl>
 
 
@@ -338,6 +363,19 @@
   <footer class="md-footer">
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="../index.html" title="&lt;no title&gt;"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> &lt;no title&gt; </span>
+              </div>
+            </a>
           
           
         </a>

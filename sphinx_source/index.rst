@@ -2,6 +2,5 @@
 
 .. autosummary::
    :toctree: generated
-   :recursive:
 
    ~stockpricecrawler.StockPriceCrawler
