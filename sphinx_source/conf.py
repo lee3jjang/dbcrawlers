@@ -102,4 +102,6 @@ html_theme_options = {
 
 html_baseurl = 'https://lee3jjang.github.io/dbcrawlers/'
 
+numpydoc_show_class_members = True
 autosummary_generate = True
+autosummary_imported_members = True

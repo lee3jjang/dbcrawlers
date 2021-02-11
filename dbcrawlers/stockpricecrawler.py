@@ -18,35 +18,45 @@ file_handler.setFormatter(log_formatter)
 logger.addHandler(file_handler)
 
 class StockPriceCrawler(object):
-    """
-        Example
-        -------
-        >> spc = StockPriceCrawler()
-        >> spc.set_code(['005830', '005930', '105560'])
-        >> spc.set_daterange('2019-01-31', '2019-12-31')
-        >> stock_price = spc.get_stock_price()
+    """네이버에서 일별 주가 시계열 데이터를 수집합니다.
+
+    Examples
+    --------
+    >>> spc = StockPriceCrawler()
+    >>> spc.set_code(['005830', '005930', '105560'])
+    >>> spc.set_daterange('2019-01-31', '2019-12-31')
+    >>> stock_price = spc.get_stock_price()
     """
 
     def __init__(self):
         pass
         
     def set_code(self, company_codes):
-        """
-            수집할 주가 코드 설정
+        """주가를 수집할 회사의 회사코드 설정
 
-            :param list company_code: 종목코드 list
+        Parameters
+        ----------
+        company_codes : list
+            종목코드 list
         """
         
         self.company_codes = company_codes
         
     def set_daterange(self, start, end, format='%Y-%m-%d'):
-        """
-            수집할 날짜 범위 설정
-            both days inclusive
-
-            :params str start: 수집시작일
-            :params str end: 수집종료일
-            :params str format: start, end 입력 format
+        """수집할 날짜 범위 설정
+            
+        Parameters
+        ----------
+        start : str
+            수집시작일
+        end : str
+            수집종료일
+        format : str
+            수집일 입력 
+            
+        Warnings
+        --------
+        (start date, end date) both days inclusive
         """
 
         self.start_date = datetime.strptime(start, '%Y-%m-%d')
@@ -55,10 +65,16 @@ class StockPriceCrawler(object):
             raise Exception('날짜 범위 입력 오류')
 
     def get_stock_price(self):
-        """
-            설정된 범위에 따라 수집 수행
+        """설정에 따라 수집 수행
             
-            :returns DataFrame: 수집된 주가 데이터프레임
+        Returns
+        -------
+        DataFrame
+            수집된 주가 데이터프레임
+
+        Warnings
+        --------
+        company code와 date range 설정 후 실행해야 함
         """
 
         if not all([hasattr(self, 'company_codes'), hasattr(self, 'start_date'), hasattr(self, 'end_date')]):
