@@ -1,7 +1,6 @@
 __pycache__
 log
 .vscode
-docs/build
 build
 dist
 dbcrawlers.egg-info
