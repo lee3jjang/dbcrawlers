@@ -1,57 +1,92 @@
 import os
 import time
-from glob import glob
+import shutil
+import logging
 import pandas as pd
+from glob import glob
+from pathlib import Path
 from random import random
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
-from pathlib import Path
+
+# 로깅 설정
+if not any([s == 'log' for s in os.listdir()]): os.mkdir('log')
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+log_formatter = logging.Formatter('[%(asctime)s - %(name)s - %(levelname)s] %(message)s')
+stream_handler = logging.StreamHandler()
+stream_handler.setFormatter(log_formatter)
+logger.addHandler(stream_handler)
+file_handler = logging.FileHandler('log/encarcrawler.log')
+file_handler.setFormatter(log_formatter)
+logger.addHandler(file_handler)
+
 
 class UsedCarPriceCrawler:
+    """엔카에서 중고차 가격 데이터를 수집합니다.
 
-    def __init__(self, page_max=200):
+    Parameters
+    ----------
+    max_page : int
+        페이지 최대 수
+    headless : bool
+        수집 과정 보이는지 여부
+
+    Examples
+    --------
+    >>> url = 'http://www.encar.com/fc/fc_carsearchlist.do?carType=for&searchType=model&TG.R=B#!%7B%22action%22%3A%22(And.Hidden.N._.(C.CarType.N._.Manufacturer.%EB%B2%A4%EC%B8%A0.))%22%2C%22toggle%22%3A%7B%7D%2C%22layer%22%3A%22%22%2C%22sort%22%3A%22ModifiedDate%22%2C%22page%22%3A1%2C%22limit%22%3A20%7D'
+    >>> ucpc = UsedCarPriceCrawler(page_max=3, headless=True)
+    >>> ucpc.set_url(url)
+    >>> usedcar_price = ucpc.get_usedcar_price()
+    """
+    
+    def __init__(self, page_max=200, headless=True):
         self.page_max = page_max
+        self.headless = headless
 
     def set_url(self, url):
+        """수집할 url를 설정합니다.
+
+        Parameters
+        ----------
+        url : str
+            수집할 페이지
+        """
         self.url = url
         
     def get_usedcar_price(self):
+        """수집을 시작합니다.
+
+        Returns
+        -------
+        DataFrame
+            수집된 중고차 중고가 데이터프레임\
+        
+        Warnings
+        --------
+        url 설정 후 실행해야 함
+        """
         self._get_source(self.url)
-        self._parse()
+        return self._parse()
 
     def _get_source(self, url):
-        '''
-            Description:
-                주어진 url로 접근 → 일반등록 차량에 있는 데이터를 html 형태로 수집
-                
-            Input:
-                url - 접근할 url 주소
-                name - 저장할 폴더명
-                
-            Output:
-                result 폴더에 결과 저장
-            
-            Example:
-                url = 'http://www.encar.com/fc/fc_carsearchlist.do?carType=for&searchType=model&TG.R=B#!%7B%22action%22%3A%22(And.Hidden.N._.(C.CarType.N._.Manufacturer.%EB%B2%A4%EC%B8%A0.))%22%2C%22toggle%22%3A%7B%7D%2C%22layer%22%3A%22%22%2C%22sort%22%3A%22ModifiedDate%22%2C%22page%22%3A1%2C%22limit%22%3A20%7D'
-                name = 'benz'
-                get_source(url, name)
-        '''
         
         chrome_options = webdriver.ChromeOptions()
-        #chrome_options.add_argument('headless')
+        if self.headless:
+            chrome_options.add_argument('headless')
         chrome_options.add_argument('disable-gpu')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         driver = webdriver.Chrome(str(Path(__file__).parent / 'chromedriver'), options=chrome_options)
 
         # 폴더 생성
-        if not any([s == 'temp' for s in os.listdir('.')]):
-            os.mkdir('temp')
+        if not any([s == 'temp' for s in os.listdir(str(Path(__file__).parent))]):
+            os.mkdir(str(Path(__file__).parent / 'temp'))
         
         # 접속하기
-        print('첫 페이지에 접근합니다.')
+        logger.info('첫 페이지에 접근합니다.')
         driver.get(self.url)
 
         # [20개씩 보기] → [50개씩 보기]로 변환
@@ -62,43 +97,29 @@ class UsedCarPriceCrawler:
 
         # 수집하기
         page = 1
-        print('수집을 시작합니다.')
+        logger.info('수집을 시작합니다.')
         while(True):
             if(page > self.page_max):
-                print('수집을 종료합니다. (페이지 지정치 도달)')
+                logger.info(f'수집을 종료합니다. (페이지 한계치({self.page_max} 페이지) 도달)')
                 break
-            with open('temp/carlist_{:04d}.html'.format(page), 'w', -1, encoding='utf-8') as f:
+            with open(str(Path(__file__).parent / f'temp/carlist_{page:04d}.html'), 'w', -1, encoding='utf-8') as f:
                 soup = BeautifulSoup(driver.find_element_by_xpath('//tbody[@id="sr_normal"]/ancestor::table').get_attribute('outerHTML'), 'lxml')
                 html = str(soup)
                 f.write(html)
             try:
-                driver.find_element_by_css_selector('div#pagination').find_element_by_xpath('//a[@data-page="{}"]'.format(page+1)).click()
+                driver.find_element_by_css_selector('div#pagination').find_element_by_xpath(f'//a[@data-page="{page+1}"]').click()
             except NoSuchElementException:
-                print('수집을 종료합니다. (NoSuchElementException)')
+                logger.info(f'수집을 종료합니다. (총 수집 페이지: {page})')
                 break
             page += 1
             time.sleep(1+2*random())
         driver.close()
     
     def _parse(self):
-        '''
-            Description:
-                get_source를 통해 수집된 html파일에서 데이터를 추출하여 xlsx 형태로 저장
-                
-            Input:
-                name - get_source를 통해 저장한 폴더명
-                
-            Output:
-                result 폴더에 결과 저장
-            
-            Example:
-                name = 'benz'
-                parse(url, name)
-        '''
-        
-        print('파싱을 시작합니다.')
+
+        logger.info('파싱을 시작합니다.')
         result = []
-        files = glob('temp/*.html')
+        files = glob(str(Path(__file__).parent / 'temp/*.html'))
         for file in files:
             with open(file, 'r', -1, encoding='utf-8') as f:
                 html = f.read()
@@ -124,13 +145,6 @@ class UsedCarPriceCrawler:
             result.append(df)
         df = pd.concat(result).reset_index(drop=True)
         df['link'] = 'http://www.encar.com' + df['link']
-        with pd.ExcelWriter('temp/carlist.xlsx', 'xlsxwriter') as writer:
-            df.to_excel(writer, index=False)
-        print('파싱이 종료되었습니다.')
-
-
-
-url = 'http://www.encar.com/fc/fc_carsearchlist.do?carType=for&searchType=model&TG.R=B#!%7B%22action%22%3A%22(And.Hidden.N._.(C.CarType.N._.Manufacturer.%EB%B2%A4%EC%B8%A0.))%22%2C%22toggle%22%3A%7B%7D%2C%22layer%22%3A%22%22%2C%22sort%22%3A%22ModifiedDate%22%2C%22page%22%3A1%2C%22limit%22%3A20%7D'
-ucpc = UsedCarPriceCrawler(page_max=5)
-ucpc.set_url(url)
-ucpc.get_usedcar_price()
+        shutil.rmtree(str(Path(__file__).parent / 'temp'))
+        logger.info('파싱이 종료되었습니다.')
+        return df

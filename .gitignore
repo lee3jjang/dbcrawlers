@@ -5,3 +5,4 @@ build
 dist
 dbcrawlers.egg-info
 .pytest_cache
+dbcrawlers/temp
