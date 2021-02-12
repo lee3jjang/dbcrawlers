@@ -84,7 +84,7 @@ html_theme_options = {
     "heroes": {
         "index": "업무용 데이터 수집 라이브러리",
     },
-    'color_primary': 'blue',
+    'color_primary': 'indigo',
     'color_accent': 'light-blue',
     'repo_url': 'https://github.com/lee3jjang/dbcrawlers',
     'repo_name': 'dbcrawlers',
