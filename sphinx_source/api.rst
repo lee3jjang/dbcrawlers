@@ -14,3 +14,4 @@ Naver Crawler
 
     ~dbcrawlers.navercrawler.ExchangeRateCrawler
     ~dbcrawlers.navercrawler.StockPriceCrawler
+    ~dbcrawlers.navercrawler.OilPriceCrawler

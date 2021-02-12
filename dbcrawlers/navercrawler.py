@@ -18,7 +18,7 @@ file_handler.setFormatter(log_formatter)
 logger.addHandler(file_handler)
 
 # 주가 크롤러
-class StockPriceCrawler(object):
+class StockPriceCrawler:
     """네이버에서 일별 주가 시계열 데이터를 수집합니다.
 
     Examples
@@ -218,3 +218,105 @@ class ExchangeRateCrawler:
         end_time_total = datetime.now()
         logger.info(f'수집결과 (수집시간: {(end_time_total-start_time_total).seconds}초, 데이터수: {len(exchange_rate):,}개)')
         return exchange_rate
+
+
+# 유가 크롤러
+class OilPriceCrawler:
+    """네이버에서 일별 유가 시계열 데이터를 수집합니다.
+
+    Examples
+    --------
+    >>> opc = OilPriceCrawler()
+    >>> opc.set_code(['OIL_CL', 'OIL_DU', 'OIL_BRT'])
+    >>> opc.set_daterange('2020-01-01', '2020-12-31')
+    >>> oil_price = opc.get_oil_price()
+    """
+
+    def set_code(self, oil_codes):
+        """수집할 유가의 종목코드를 설정합니다.
+
+        Parameters
+        ----------
+        oil_codes : list
+            종목코드 목록
+        """
+        
+        self.oil_codes = oil_codes
+
+    def set_daterange(self, start, end, format='%Y-%m-%d'):
+        """수집할 날짜의 범위를 설정합니다.
+            
+        Parameters
+        ----------
+        start : str
+            수집시작일
+        end : str
+            수집종료일
+        format : str
+            수집일 입력 
+            
+        Warnings
+        --------
+        (start date, end date) both days inclusive
+        """
+
+        self.start_date = datetime.strptime(start, '%Y-%m-%d')
+        self.end_date = datetime.strptime(end, '%Y-%m-%d')
+        if self.start_date > self.end_date:
+            raise Exception('날짜 범위 입력 오류')
+
+    def get_oil_price(self):
+        """설정에 따라 수집을 수행합니다.
+            
+        Returns
+        -------
+        DataFrame
+            수집된 유가 데이터프레임
+
+        Warnings
+        --------
+        oil codes와 date range 설정 후 실행해야 함
+        """
+
+        if not all([hasattr(self, 'oil_codes'), hasattr(self, 'start_date'), hasattr(self, 'end_date')]):
+            raise Exception('사전 프로세스 오류')
+
+        # 수집
+        start_time_total = datetime.now()
+        result = []
+        logger.info(f'입력정보 (종목코드: {self.oil_codes}, 수집일자: {self.start_date.strftime("%Y.%m.%d")} ~ {self.end_date.strftime("%Y.%m.%d")})')
+        for code in self.oil_codes:
+            logger.info(f'수집을 시작합니다. (종목코드: {code})')
+            start_time_each = datetime.now()
+            page = 1
+            while(True):
+                url = f'https://finance.naver.com/marketindex/worldDailyQuote.nhn?marketindexCd={code}&fdtc=2&page={page}'
+                # headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"}
+                # res = requests.get(url, headers=headers, verify=True)
+                # html = res.text
+                data = pd.read_html(url)[0].dropna()
+
+                if page != 1:
+                    try:
+                        if data.iloc[-1, 0] == result[-1].iloc[-1, 0]:
+                            break
+                    except:
+                        break
+                data.insert(0, '종목코드', code)
+                result.append(data)
+                date_min = datetime.strptime(data['날짜'].iloc[-1], '%Y.%m.%d')
+                if date_min <= self.start_date:
+                    break
+                page += 1
+                time.sleep(0.01) # DELAY
+            end_time_each = datetime.now()
+            logger.info(f'수집을 종료합니다. (종목코드: {code}, 수집시간: {(end_time_each-start_time_each).seconds}초)')
+                
+        oil_price = pd.concat(result)
+        oil_price.columns = ['종목코드', '기준일자', '파실때', '보내실때', '받으실때']
+        oil_price['기준일자'] = pd.to_datetime(oil_price['기준일자'], format='%Y.%m.%d')
+        oil_price = oil_price.query('기준일자 <= @self.end_date and 기준일자 >= @self.start_date').reset_index(drop=True)
+        oil_price = oil_price[['기준일자', '종목코드', '파실때', '보내실때', '받으실때']]
+        end_time_total = datetime.now()
+        logger.info(f'수집결과 (수집시간: {(end_time_total-start_time_total).seconds}초, 데이터수: {len(oil_price):,}개)')
+        return oil_price

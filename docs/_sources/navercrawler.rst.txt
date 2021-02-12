@@ -33,3 +33,4 @@ Model Class
 
     StockPriceCrawler
     ExchangeRateCrawler
+    OilPriceCrawler
