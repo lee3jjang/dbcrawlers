@@ -4,3 +4,4 @@ log
 build
 dist
 dbcrawlers.egg-info
+.pytest_cache
