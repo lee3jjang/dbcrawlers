@@ -24,6 +24,9 @@ Introduction
    exchange_rate = erc.get_exchange_rate()
    exchange_rate.head()
 
+Citation
+========
+
 .. toctree::
    :maxdepth: 1
 
