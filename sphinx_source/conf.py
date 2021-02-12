@@ -39,6 +39,7 @@ extensions = [
     'IPython.sphinxext.ipython_console_highlighting',
     'IPython.sphinxext.ipython_directive',
     'numpydoc',
+    'sphinx.ext.autosectionlabel',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -107,3 +108,4 @@ html_baseurl = 'https://lee3jjang.github.io/dbcrawlers/'
 numpydoc_show_class_members = False
 autosummary_generate = True
 autosummary_imported_members = True
+autosectionlabel_prefix_document = True
