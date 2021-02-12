@@ -214,7 +214,7 @@ class ExchangeRateCrawler:
         exchange_rate.columns = ['종목코드', '기준일자', '매매기준율', '전일대비', '현찰_사실때', '현찰_파실때', '송금_보내실때', '송금_받으실때', 'TC_사실때', '외화수표_파실때']
         exchange_rate['기준일자'] = pd.to_datetime(exchange_rate['기준일자'], format='%Y.%m.%d')
         exchange_rate = exchange_rate.query('기준일자 <= @self.end_date and 기준일자 >= @self.start_date').reset_index(drop=True)
-        exchange_rate = exchange_rate[['기준일자', '종목코드', '매매기준율', '전일대비', '현찰_사실때', '현찰_파실때', '송금_보내실때', '송금_받으실때', 'TC_사실때', '외화수표_파실때']]
+        exchange_rate = exchange_rate[['기준일자', '종목코드', '매매기준율', '현찰_사실때', '현찰_파실때', '송금_보내실때', '송금_받으실때', 'TC_사실때', '외화수표_파실때']]
         end_time_total = datetime.now()
         logger.info(f'수집결과 (수집시간: {(end_time_total-start_time_total).seconds}초, 데이터수: {len(exchange_rate):,}개)')
         return exchange_rate
@@ -313,10 +313,10 @@ class OilPriceCrawler:
             logger.info(f'수집을 종료합니다. (종목코드: {code}, 수집시간: {(end_time_each-start_time_each).seconds}초)')
                 
         oil_price = pd.concat(result)
-        oil_price.columns = ['종목코드', '기준일자', '파실때', '보내실때', '받으실때']
+        oil_price.columns = ['종목코드', '기준일자', '종가', '전일대비', '등락율']
         oil_price['기준일자'] = pd.to_datetime(oil_price['기준일자'], format='%Y.%m.%d')
         oil_price = oil_price.query('기준일자 <= @self.end_date and 기준일자 >= @self.start_date').reset_index(drop=True)
-        oil_price = oil_price[['기준일자', '종목코드', '파실때', '보내실때', '받으실때']]
+        oil_price = oil_price[['기준일자', '종목코드', '종가']]
         end_time_total = datetime.now()
         logger.info(f'수집결과 (수집시간: {(end_time_total-start_time_total).seconds}초, 데이터수: {len(oil_price):,}개)')
         return oil_price

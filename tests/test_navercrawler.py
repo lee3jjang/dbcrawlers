@@ -35,21 +35,21 @@ def oil_price():
     price = opc.get_oil_price()
     yield price
 
-@pytest.mark.skip(reason="already passed")
+# @pytest.mark.skip(reason="already passed")
 def test_exchange_rate_isworking(exchange_rate):
     assert len(exchange_rate) == 498
 
-@pytest.mark.skip(reason="already passed")
+# @pytest.mark.skip(reason="already passed")
 def test_exchange_rate_date(exchange_rate):
     check_startdate = exchange_rate['기준일자'].min() == datetime(2020, 1, 2)
     check_enddate = exchange_rate['기준일자'].max() == datetime(2020, 12, 31)
     assert check_startdate and check_enddate
 
-@pytest.mark.skip(reason="already passed")
+# @pytest.mark.skip(reason="already passed")
 def test_stock_price_isworking(stock_price):
     assert len(stock_price) == 744
 
-@pytest.mark.skip(reason="already passed")
+# @pytest.mark.skip(reason="already passed")
 def test_stock_price_date(stock_price):
     check_startdate = stock_price['기준일자'].min() == datetime(2020, 1, 2)
     check_enddate = stock_price['기준일자'].max() == datetime(2020, 12, 30)
