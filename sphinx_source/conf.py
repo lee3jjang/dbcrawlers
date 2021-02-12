@@ -95,7 +95,7 @@ html_theme_options = {
     "master_doc": False,
     'html_minify': False,
     'css_minify': False,
-    'version_dropdown': True,
+    'version_dropdown': False,
     'google_analytics_account': 'UA-XXXXX',
     'version_info': {
       "release": "",
