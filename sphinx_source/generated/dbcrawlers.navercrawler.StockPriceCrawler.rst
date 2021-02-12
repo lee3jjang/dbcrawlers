@@ -1,7 +1,7 @@
-﻿dbcrawlers.stockpricecrawler.StockPriceCrawler
-==============================================
+dbcrawlers.navercrawler.StockPriceCrawler
+=========================================
 
-.. currentmodule:: dbcrawlers.stockpricecrawler
+.. currentmodule:: dbcrawlers.navercrawler
 
 .. autoclass:: StockPriceCrawler
    :members:

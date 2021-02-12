@@ -12,7 +12,7 @@ Introduction
 
 .. ipython:: python
 
-   from dbcrawlers.exchangeratecrawler import ExchangeRateCrawler
+   from dbcrawlers.navercrawler import ExchangeRateCrawler
 
    erc = ExchangeRateCrawler()
 

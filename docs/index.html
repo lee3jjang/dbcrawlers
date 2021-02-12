@@ -1,10 +1,9 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -56,12 +55,13 @@
   
   
     <title>Introduction &#8212; dbcrawlers v0.0.1 documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="canonical" href="https://lee3jjang.github.io/dbcrawlers/index.html" />
     <link rel="author" title="About these documents" href="about.html" />
@@ -284,7 +284,7 @@
 <h1 id="index--page-root">Introduction<a class="headerlink" href="#index--page-root" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">dbcrawlers</span></code> 는 주가, 환율 등의 데이터를 편리하게 수집하기 위해 만들어졌습니다.
 아래는 간단한 예제입니다:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">dbcrawlers.exchangeratecrawler</span> <span class="kn">import</span> <span class="n">ExchangeRateCrawler</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">dbcrawlers.navercrawler</span> <span class="kn">import</span> <span class="n">ExchangeRateCrawler</span>
 
 <span class="gp">In [2]: </span><span class="n">erc</span> <span class="o">=</span> <span class="n">ExchangeRateCrawler</span><span class="p">()</span>
 
@@ -358,7 +358,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
