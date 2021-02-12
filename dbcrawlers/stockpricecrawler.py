@@ -71,7 +71,7 @@ class StockPriceCrawler(object):
 
         Warnings
         --------
-        company code와 date range 설정 후 실행해야 함
+        company codes와 date range 설정 후 실행해야 함
         """
 
         if not all([hasattr(self, 'company_codes'), hasattr(self, 'start_date'), hasattr(self, 'end_date')]):
@@ -106,6 +106,7 @@ class StockPriceCrawler(object):
                 time.sleep(0.01) # DELAY
             end_time_each = datetime.now()
             logger.info(f'수집을 종료합니다. (종목코드: {code}, 수집시간: {(end_time_each-start_time_each).seconds}초)')
+
         stock_price = pd.concat(result)
         stock_price.columns = ['종목코드', '기준일자', '종가', '전일비', '시가', '고가', '저가', '거래량']
         stock_price['기준일자'] = pd.to_datetime(stock_price['기준일자'], format='%Y.%m.%d')
