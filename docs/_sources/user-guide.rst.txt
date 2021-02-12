@@ -1,19 +1,10 @@
 User Guide
 ==========
 
-Exchange Rate
--------------
+Financial Data Crawler
+----------------------
 
 .. toctree::
     :maxdepth: 1
 
-    exchangeratecrawler
-
-
-Stock Price
------------
-
-.. toctree::
-    :maxdepth: 1
-
-    stockpricecrawler
+    navercrawler

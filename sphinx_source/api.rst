@@ -1,26 +1,16 @@
 API Reference
 =============
-dbcrawlers의 메인 API는 2가지로 나뉩니다:
+dbcrawlers의 메인 API는 1가지로 나뉩니다:
 
-* ``dbcrawlers.exchangeratecrawler``: 환율 데이터를 수집합니다.
-* ``dbcrawlers.stockpricecrawler``: 주가 데이터를 수집합니다.
+* ``dbcrawlers.navercrawler``: 네이버 금융 데이터를 수집합니다.
 
 
-``dbcrawlers.exchangeratecrawler``
-----------------------------------
+``dbcrawlers.navercrawler``
+---------------------------
 
-Exchange Rate
+Naver Crawler
 ~~~~~~~~~~~~~
 .. autosummary::
 
-    ~dbcrawlers.exchangeratecrawler.ExchangeRateCrawler
-
-
-``dbcrawlers.stockpricecrawler``
---------------------------------
-
-Stock Price
-~~~~~~~~~~~
-.. autosummary::
-
-    ~dbcrawlers.stockpricecrawler.StockPriceCrawler
+    ~dbcrawlers.navercrawler.ExchangeRateCrawler
+    ~dbcrawlers.navercrawler.StockPriceCrawler

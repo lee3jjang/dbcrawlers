@@ -1,12 +1,12 @@
-Stock Price Crawler
-===================
+Naver Crawler
+=============
 
 Examples
 --------
 
 .. ipython:: python
 
-   from dbcrawlers.stockpricecrawler import StockPriceCrawler
+   from dbcrawlers.navercrawler import StockPriceCrawler
 
    spc = StockPriceCrawler()
 
@@ -22,7 +22,7 @@ Examples
 Model Reference
 ---------------
 
-.. module:: dbcrawlers.stockpricecrawler
+.. module:: dbcrawlers.navercrawler
 
 Model Class
 ^^^^^^^^^^^
@@ -32,3 +32,4 @@ Model Class
     :template: class_custom.rst
 
     StockPriceCrawler
+    ExchangeRateCrawler

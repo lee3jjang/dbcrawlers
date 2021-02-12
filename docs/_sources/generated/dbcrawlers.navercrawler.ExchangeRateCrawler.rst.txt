@@ -1,7 +1,7 @@
-﻿dbcrawlers.exchangeratecrawler.ExchangeRateCrawler
-==================================================
+dbcrawlers.navercrawler.ExchangeRateCrawler
+===========================================
 
-.. currentmodule:: dbcrawlers.exchangeratecrawler
+.. currentmodule:: dbcrawlers.navercrawler
 
 .. autoclass:: ExchangeRateCrawler
    :members:
