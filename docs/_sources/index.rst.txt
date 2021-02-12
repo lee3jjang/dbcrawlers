@@ -2,7 +2,10 @@ Components/Backdrop
 ===================
 
 .. autosummary::
-   mypackage.mymodule
+   :recursive:
+   :toctree: _generated
+
+   ~mypackage
 
 .. seealso::
 

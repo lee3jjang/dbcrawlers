@@ -1,5 +1,9 @@
-def myfunction(x, y):
+"""연습용 함수가 들어있는 모듈입니다
+"""
+
+def myaddition(x, y):
     """두 수의 합을 구합니다
+
     Parameters
     ----------
     x : int
