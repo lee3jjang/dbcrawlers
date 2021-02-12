@@ -77,9 +77,8 @@ html_sidebars = {
 html_theme_options = {
     "nav_title": 'dbcrawlers ' + release,
     "nav_links": [
-        {"href": "https://vm.dbins.co.kr", "title": "업무가상PC", "internal": False},
-        {"href": "https://www.mdbins.com:8100", "title": "외부포탈", "internal": False},
-        {"href": "https://mail.dbins.co.kr", "title": "외부메일", "internal": False},
+        {"href": "https://bashtage.github.io/sphinx-material/", "title": "Material for Sphinx", "internal": False},
+        {"href": "https://www.statsmodels.org/stable/", "title": "Statsmodels", "internal": False},
     ],
     "heroes": {
         "index": "업무용 데이터 수집 라이브러리",
