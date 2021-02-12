@@ -62,11 +62,11 @@ class UsedCarPriceCrawler:
         Returns
         -------
         DataFrame
-            수집된 중고차 중고가 데이터프레임\
+            수집된 중고차 중고가 데이터프레임
         
         Warnings
         --------
-        url 설정 후 실행해야 함
+            url 설정 후 실행해야 함
         """
         self._get_source(self.url)
         return self._parse()
