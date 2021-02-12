@@ -37,6 +37,7 @@ Dependencies
 * `numpydoc <https://numpydoc.readthedocs.io/en/latest/>`__
 * `nbsphinx <https://nbsphinx.readthedocs.io/>`__ >= 0.8.1
 * `sphinx_material <https://bashtage.github.io/sphinx-material/>`__
+* `selenium <https://selenium-python.readthedocs.io/>`__
 
 
 Optional Dependencies
