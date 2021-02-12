@@ -1,9 +1,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -54,26 +55,25 @@
   <script async src='https://www.google-analytics.com/analytics.js'></script>
   
   
-    <title>&lt;no title&gt; &#8212; dbcrawlers v0.0.1 문서</title>
-    <link rel="stylesheet" href="_static/material.css" type="text/css" />
+    <title>Introduction &#8212; dbcrawlers v0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/material.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script src="_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="canonical" href="https://lee3jjang.github.io/dbcrawlers/index.html" />
-    <link rel="index" title="색인" href="genindex.html" />
-    <link rel="search" title="검색" href="search.html" />
-    <link rel="next" title="dbcrawlers.stockpricecrawler.StockPriceCrawler" href="generated/dbcrawlers.stockpricecrawler.StockPriceCrawler.html" />
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installing dbcrawlers" href="install.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue data-md-color-accent=light-blue>
+        data-md-color-primary=indigo data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -91,7 +91,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="#" title="dbcrawlers v0.0.1 문서"
+        <a href="#" title="dbcrawlers v0.0.1 documentation"
            class="md-header-nav__button md-logo">
           
             <i class="md-icon">&#xe80e</i>
@@ -104,7 +104,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">dbcrawlers v0.0.1</span>
-          <span class="md-header-nav__topic"> &lt;no title&gt; </span>
+          <span class="md-header-nav__topic"> Introduction </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -155,18 +155,6 @@
         </div>
       
       
-  
-  <div class="md-flex__cell md-flex__cell--shrink dropdown">
-    <button class="dropdownbutton">Versions</button>
-    <div class="dropdown-content md-hero">
-          <a title="release" href="">release</a>
-      
-          <a title="development" href="devel">development</a>
-      
-    </div>
-  </div>
-  
-
     </div>
   </nav>
 </header>
@@ -177,7 +165,7 @@
 
 <div class="md-hero" data-md-component="hero">
   <div class="md-hero__inner md-grid">
-    <p>업무용 크롤러 라이브러리</p>
+    <p>업무용 데이터 수집 라이브러리</p>
   </div>
 </div>
 
@@ -187,11 +175,9 @@
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
             
-            <li class="md-tabs__item"><a href="https://vm.dbins.co.kr" class="md-tabs__link">업무가상PC</a></li>
+            <li class="md-tabs__item"><a href="https://bashtage.github.io/sphinx-material/" class="md-tabs__link">Material for Sphinx</a></li>
             
-            <li class="md-tabs__item"><a href="https://www.mdbins.com:8100" class="md-tabs__link">외부포탈</a></li>
-            
-            <li class="md-tabs__item"><a href="https://mail.dbins.co.kr" class="md-tabs__link">외부메일</a></li>
+            <li class="md-tabs__item"><a href="https://www.statsmodels.org/stable/" class="md-tabs__link">Statsmodels</a></li>
       </ul>
     </div>
   </nav>
@@ -203,13 +189,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="#" title="dbcrawlers v0.0.1 문서" class="md-nav__button md-logo">
+    <a href="#" title="dbcrawlers v0.0.1 documentation" class="md-nav__button md-logo">
       
         <i class="md-icon">&#xe80e</i>
       
     </a>
     <a href="#"
-       title="dbcrawlers v0.0.1 문서">dbcrawlers v0.0.1</a>
+       title="dbcrawlers v0.0.1 documentation">dbcrawlers v0.0.1</a>
   </label>
     <div class="md-nav__source">
       <a href="https://github.com/lee3jjang/dbcrawlers" title="Go to repository" class="md-source" data-md-source="github">
@@ -233,7 +219,28 @@
     <li class="md-nav__item">
     
     
-      <a href="generated/dbcrawlers.stockpricecrawler.StockPriceCrawler.html" class="md-nav__link">dbcrawlers.stockpricecrawler.StockPriceCrawler</a>
+      <a href="install.html" class="md-nav__link">Installing dbcrawlers</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="user-guide.html" class="md-nav__link">User Guide</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="api.html" class="md-nav__link">API Reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="about.html" class="md-nav__link">About dbcrawlers</a>
       
     
     </li>
@@ -249,9 +256,16 @@
               <div class="md-sidebar__inner">
                 
 <nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#index--page-root" class="md-nav__link">Introduction</a>
+        </li>
+        <li class="md-nav__item"><a href="#citation" class="md-nav__link">Citation</a>
+        </li>
+        <li class="md-nav__item"><a href="#index" class="md-nav__link">Index</a>
+        </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/index.rst.txt">소스 보기</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/index.rst.txt">Show Source</a> </li>
 
 <li id="searchbox" class="md-nav__item"></li>
 
@@ -264,17 +278,51 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  <table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%"/>
-<col style="width: 90%"/>
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/dbcrawlers.stockpricecrawler.StockPriceCrawler.html#dbcrawlers.stockpricecrawler.StockPriceCrawler" title="dbcrawlers.stockpricecrawler.StockPriceCrawler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StockPriceCrawler</span></code></a></p></td>
-<td><p>네이버에서 일별 주가 시계열 데이터를 수집합니다.</p></td>
-</tr>
-</tbody>
-</table>
+  <a class="reference internal image-reference" href="_images/logo.svg"><img alt="statsmodels" class="align-left" src="_images/logo.svg" width="50%"/></a>
+<p><a class="reference internal" href="about.html#about-dbcrawlers"><span class="std std-ref">dbcrawlers</span></a> 는 웹에 존재하는 데이터를 수집하기 위한 클래스 및 함수들을 제공하는 파이썬 모듈입니다.</p>
+
+<h1 id="index--page-root">Introduction<a class="headerlink" href="#index--page-root" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">dbcrawlers</span></code> 는 주가, 환율 등의 데이터를 편리하게 수집하기 위해 만들어졌습니다.
+아래는 간단한 예제입니다:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">dbcrawlers.exchangeratecrawler</span> <span class="kn">import</span> <span class="n">ExchangeRateCrawler</span>
+
+<span class="gp">In [2]: </span><span class="n">erc</span> <span class="o">=</span> <span class="n">ExchangeRateCrawler</span><span class="p">()</span>
+
+<span class="go"># 종목코드, 기준일자 설정</span>
+<span class="gp">In [3]: </span><span class="n">erc</span><span class="o">.</span><span class="n">set_code</span><span class="p">([</span><span class="s1">'FX_USDKRW'</span><span class="p">,</span> <span class="s1">'FX_JPYKRW'</span><span class="p">])</span>
+
+<span class="gp">In [4]: </span><span class="n">erc</span><span class="o">.</span><span class="n">set_daterange</span><span class="p">(</span><span class="s1">'2020-01-01'</span><span class="p">,</span> <span class="s1">'2020-12-31'</span><span class="p">)</span>
+
+<span class="go"># 수집시작</span>
+<span class="gp">In [5]: </span><span class="n">exchange_rate</span> <span class="o">=</span> <span class="n">erc</span><span class="o">.</span><span class="n">get_exchange_rate</span><span class="p">()</span>
+
+<span class="gp">In [6]: </span><span class="n">exchange_rate</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="gh">Out[6]: </span><span class="go"></span>
+<span class="go">        기준일자       종목코드   매매기준율  전일대비   현찰_사실때   현찰_파실때  송금_보내실때  송금_받으실때   TC_사실때  외화수표_파실때</span>
+<span class="go">0 2020-12-31  FX_USDKRW  1088.0   0.5  1107.04  1068.96   1098.6   1077.4  1101.05   1076.80</span>
+<span class="go">1 2020-12-30  FX_USDKRW  1087.5   6.0  1106.53  1068.47   1098.1   1076.9  1100.55   1076.30</span>
+<span class="go">2 2020-12-29  FX_USDKRW  1093.5   3.0  1112.63  1074.37   1104.2   1082.8  1106.62   1082.20</span>
+<span class="go">3 2020-12-28  FX_USDKRW  1096.5   7.0  1115.68  1077.32   1107.2   1085.8  1109.65   1085.20</span>
+<span class="go">4 2020-12-24  FX_USDKRW  1103.5   4.0  1122.81  1084.19   1114.3   1092.7  1116.74   1092.09</span>
+</pre></div>
+</div>
+
+
+<h1 id="citation">Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing dbcrawlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About dbcrawlers</a></li>
+</ul>
+</div>
+
+
+<h1 id="index">Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p>
+<p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p>
+
 
 
           </article>
@@ -287,12 +335,12 @@
       <nav class="md-footer-nav__inner md-grid">
           
           
-            <a href="generated/dbcrawlers.stockpricecrawler.StockPriceCrawler.html" title="dbcrawlers.stockpricecrawler.StockPriceCrawler"
+            <a href="install.html" title="Installing dbcrawlers"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> dbcrawlers.stockpricecrawler.StockPriceCrawler </span>
+                class="md-footer-nav__direction"> Next </span> Installing dbcrawlers </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
@@ -310,7 +358,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

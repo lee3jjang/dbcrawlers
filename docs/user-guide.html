@@ -35,14 +35,14 @@
     </style>
   
 
-  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
-  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
-  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
   
-  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
   
   <meta name="theme-color" content="#3f51b5">
-  <script src="../_static/javascripts/modernizr.js"></script>
+  <script src="_static/javascripts/modernizr.js"></script>
   
   <script>
       window.ga = window.ga || function () {
@@ -55,20 +55,20 @@
   <script async src='https://www.google-analytics.com/analytics.js'></script>
   
   
-    <title>dbcrawlers.stockpricecrawler.StockPriceCrawler &#8212; dbcrawlers v0.0.1 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>User Guide &#8212; dbcrawlers v0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/material.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <link rel="canonical" href="https://lee3jjang.github.io/dbcrawlers/generated/dbcrawlers.stockpricecrawler.StockPriceCrawler.html" />
-    <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="API Reference" href="../api.html" />
-    <link rel="prev" title="Stock Price Crawler" href="../stockpricecrawler.html" />
+    <link rel="canonical" href="https://lee3jjang.github.io/dbcrawlers/user-guide.html" />
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exchange Rate Crawler" href="exchangeratecrawler.html" />
+    <link rel="prev" title="Installing dbcrawlers" href="install.html" />
   
    
 
@@ -87,12 +87,12 @@
   <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
   <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
   <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#generated/dbcrawlers.stockpricecrawler.StockPriceCrawler" tabindex="1" class="md-skip"> Skip to content </a>
+  <a href="#user-guide" tabindex="1" class="md-skip"> Skip to content </a>
   <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="dbcrawlers v0.0.1 documentation"
+        <a href="index.html" title="dbcrawlers v0.0.1 documentation"
            class="md-header-nav__button md-logo">
           
             <i class="md-icon">&#xe80e</i>
@@ -105,7 +105,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">dbcrawlers v0.0.1</span>
-          <span class="md-header-nav__topic"> dbcrawlers.stockpricecrawler.StockPriceCrawler </span>
+          <span class="md-header-nav__topic"> User Guide </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -114,7 +114,7 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../search.html" method="GET" name="search">
+    <form class="md-search__form" action="search.html" method="GET" name="search">
       <input type="text" class="md-search__input" name="q" placeholder="Search"
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
@@ -172,8 +172,6 @@
             <li class="md-tabs__item"><a href="https://bashtage.github.io/sphinx-material/" class="md-tabs__link">Material for Sphinx</a></li>
             
             <li class="md-tabs__item"><a href="https://www.statsmodels.org/stable/" class="md-tabs__link">Statsmodels</a></li>
-          <li class="md-tabs__item"><a href="../user-guide.html" class="md-tabs__link">User Guide</a></li>
-          <li class="md-tabs__item"><a href="../stockpricecrawler.html" class="md-tabs__link">Stock Price Crawler</a></li>
       </ul>
     </div>
   </nav>
@@ -185,12 +183,12 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="dbcrawlers v0.0.1 documentation" class="md-nav__button md-logo">
+    <a href="index.html" title="dbcrawlers v0.0.1 documentation" class="md-nav__button md-logo">
       
         <i class="md-icon">&#xe80e</i>
       
     </a>
-    <a href="../index.html"
+    <a href="index.html"
        title="dbcrawlers v0.0.1 documentation">dbcrawlers v0.0.1</a>
   </label>
     <div class="md-nav__source">
@@ -215,31 +213,59 @@
     <li class="md-nav__item">
     
     
-      <a href="../install.html" class="md-nav__link">Installing dbcrawlers</a>
+      <a href="install.html" class="md-nav__link">Installing dbcrawlers</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../user-guide.html" class="md-nav__link">User Guide</a>
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> User Guide </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">User Guide</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#user-guide--page-root" class="md-nav__link">User Guide</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#exchange-rate" class="md-nav__link">Exchange Rate</a>
+        </li>
+        <li class="md-nav__item"><a href="#stock-price" class="md-nav__link">Stock Price</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/user-guide.rst.txt">Show Source</a> </li>
+
+  </ul>
+</nav>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="../user-guide.html#exchange-rate" class="md-nav__link">Exchange Rate</a>
+      <a href="#exchange-rate" class="md-nav__link">Exchange Rate</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="exchangeratecrawler.html" class="md-nav__link">Exchange Rate Crawler</a>
       
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../user-guide.html#stock-price" class="md-nav__link">Stock Price</a>
+      <a href="#stock-price" class="md-nav__link">Stock Price</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="../stockpricecrawler.html" class="md-nav__link">Stock Price Crawler</a>
+      <a href="stockpricecrawler.html" class="md-nav__link">Stock Price Crawler</a>
       
     
     </li></ul>
@@ -250,14 +276,14 @@
     <li class="md-nav__item">
     
     
-      <a href="../api.html" class="md-nav__link">API Reference</a>
+      <a href="api.html" class="md-nav__link">API Reference</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../about.html" class="md-nav__link">About dbcrawlers</a>
+      <a href="about.html" class="md-nav__link">About dbcrawlers</a>
       
     
     </li>
@@ -273,9 +299,18 @@
               <div class="md-sidebar__inner">
                 
 <nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#user-guide--page-root" class="md-nav__link">User Guide</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#exchange-rate" class="md-nav__link">Exchange Rate</a>
+        </li>
+        <li class="md-nav__item"><a href="#stock-price" class="md-nav__link">Stock Price</a>
+        </li></ul>
+            </nav>
+        </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/generated/dbcrawlers.stockpricecrawler.StockPriceCrawler.rst.txt">Show Source</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/user-guide.rst.txt">Show Source</a> </li>
 
 <li id="searchbox" class="md-nav__item"></li>
 
@@ -289,88 +324,23 @@
           <article class="md-content__inner md-typeset" role="main">
             
   
-<h1 id="generated-dbcrawlers-stockpricecrawler-stockpricecrawler--page-root">dbcrawlers.stockpricecrawler.StockPriceCrawler<a class="headerlink" href="#generated-dbcrawlers-stockpricecrawler-stockpricecrawler--page-root" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt id="dbcrawlers.stockpricecrawler.StockPriceCrawler">
-<em class="property">class </em><code class="sig-prename descclassname">dbcrawlers.stockpricecrawler.</code><code class="sig-name descname">StockPriceCrawler</code><a class="headerlink" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler" title="Permalink to this definition">¶</a></dt>
-<dd><p>네이버에서 일별 주가 시계열 데이터를 수집합니다.</p>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">spc</span> <span class="o">=</span> <span class="n">StockPriceCrawler</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">spc</span><span class="o">.</span><span class="n">set_code</span><span class="p">([</span><span class="s1">'005830'</span><span class="p">,</span> <span class="s1">'005930'</span><span class="p">,</span> <span class="s1">'105560'</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">spc</span><span class="o">.</span><span class="n">set_daterange</span><span class="p">(</span><span class="s1">'2019-01-31'</span><span class="p">,</span> <span class="s1">'2019-12-31'</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">stock_price</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">get_stock_price</span><span class="p">()</span>
-</pre></div>
+<h1 id="user-guide--page-root">User Guide<a class="headerlink" href="#user-guide--page-root" title="Permalink to this headline">¶</a></h1>
+
+<h2 id="exchange-rate">Exchange Rate<a class="headerlink" href="#exchange-rate" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="exchangeratecrawler.html">Exchange Rate Crawler</a></li>
+</ul>
 </div>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%"/>
-<col style="width: 90%"/>
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price" title="dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stock_price</span></code></a>()</p></td>
-<td><p>설정에 따라 수집을 수행합니다.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler.set_code" title="dbcrawlers.stockpricecrawler.StockPriceCrawler.set_code"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_code</span></code></a>(company_codes)</p></td>
-<td><p>주가를 수집할 회사의 회사코드를 설정합니다.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler.set_daterange" title="dbcrawlers.stockpricecrawler.StockPriceCrawler.set_daterange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_daterange</span></code></a>(start, end[, format])</p></td>
-<td><p>수집할 날짜의 범위를 설정합니다.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price">
-<code class="sig-name descname">get_stock_price</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler.get_stock_price" title="Permalink to this definition">¶</a></dt>
-<dd><p>설정에 따라 수집을 수행합니다.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>DataFrame</dt><dd><p>수집된 주가 데이터프레임</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>company codes와 date range 설정 후 실행해야 함</p>
+
+
+<h2 id="stock-price">Stock Price<a class="headerlink" href="#stock-price" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="stockpricecrawler.html">Stock Price Crawler</a></li>
+</ul>
 </div>
-</dd></dl>
-<dl class="py method">
-<dt id="dbcrawlers.stockpricecrawler.StockPriceCrawler.set_code">
-<code class="sig-name descname">set_code</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">company_codes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler.set_code" title="Permalink to this definition">¶</a></dt>
-<dd><p>주가를 수집할 회사의 회사코드를 설정합니다.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>company_codes</strong><span class="classifier">list</span></dt><dd><p>종목코드 목록</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt id="dbcrawlers.stockpricecrawler.StockPriceCrawler.set_daterange">
-<code class="sig-name descname">set_daterange</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">format</span><span class="o">=</span><span class="default_value">'%Y-%m-%d'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dbcrawlers.stockpricecrawler.StockPriceCrawler.set_daterange" title="Permalink to this definition">¶</a></dt>
-<dd><p>수집할 날짜의 범위를 설정합니다.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>start</strong><span class="classifier">str</span></dt><dd><p>수집시작일</p>
-</dd>
-<dt><strong>end</strong><span class="classifier">str</span></dt><dd><p>수집종료일</p>
-</dd>
-<dt><strong>format</strong><span class="classifier">str</span></dt><dd><p>수집일 입력</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>(start date, end date) both days inclusive</p>
-</div>
-</dd></dl>
-</dd></dl>
+
 
 
 
@@ -383,7 +353,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="../stockpricecrawler.html" title="Stock Price Crawler"
+            <a href="install.html" title="Installing dbcrawlers"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -392,17 +362,17 @@
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> Stock Price Crawler </span>
+                      class="md-footer-nav__direction"> Previous </span> Installing dbcrawlers </span>
               </div>
             </a>
           
           
-            <a href="../api.html" title="API Reference"
+            <a href="exchangeratecrawler.html" title="Exchange Rate Crawler"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> API Reference </span>
+                class="md-footer-nav__direction"> Next </span> Exchange Rate Crawler </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
@@ -428,7 +398,7 @@
       </div>
     </div>
   </footer>
-  <script src="../_static/javascripts/application.js"></script>
+  <script src="_static/javascripts/application.js"></script>
   <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
   </body>
 </html>

@@ -39,6 +39,7 @@ extensions = [
     'IPython.sphinxext.ipython_console_highlighting',
     'IPython.sphinxext.ipython_directive',
     'numpydoc',
+    'sphinx.ext.autosectionlabel',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -49,7 +50,7 @@ templates_path = ['_templates']
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'ko'
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -76,27 +77,27 @@ html_sidebars = {
 html_theme_options = {
     "nav_title": 'dbcrawlers ' + release,
     "nav_links": [
-        {"href": "https://vm.dbins.co.kr", "title": "업무가상PC", "internal": False},
-        {"href": "https://www.mdbins.com:8100", "title": "외부포탈", "internal": False},
-        {"href": "https://mail.dbins.co.kr", "title": "외부메일", "internal": False},
+        {"href": "https://bashtage.github.io/sphinx-material/", "title": "Material for Sphinx", "internal": False},
+        {"href": "https://www.statsmodels.org/stable/", "title": "Statsmodels", "internal": False},
     ],
     "heroes": {
-        "index": "업무용 크롤러 라이브러리",
+        "index": "업무용 데이터 수집 라이브러리",
     },
-    'color_primary': 'blue',
+    'color_primary': 'indigo',
     'color_accent': 'light-blue',
     'repo_url': 'https://github.com/lee3jjang/dbcrawlers',
     'repo_name': 'dbcrawlers',
     'repo_type': 'github',
     'logo_icon': '&#xe80e',
+    'globaltoc_depth': 3,
+    'globaltoc_collapse': True,
     "master_doc": False,
     'html_minify': False,
     'css_minify': False,
-    'version_dropdown': True,
+    'version_dropdown': False,
     'google_analytics_account': 'UA-XXXXX',
     'version_info': {
       "release": "",
-      "development": "devel",
    },
 }
 
@@ -105,3 +106,4 @@ html_baseurl = 'https://lee3jjang.github.io/dbcrawlers/'
 numpydoc_show_class_members = False
 autosummary_generate = True
 autosummary_imported_members = True
+autosectionlabel_prefix_document = True

@@ -1,4 +1,4 @@
-dbcrawlers.stockpricecrawler.StockPriceCrawler
+﻿dbcrawlers.stockpricecrawler.StockPriceCrawler
 ==============================================
 
 .. currentmodule:: dbcrawlers.stockpricecrawler
@@ -7,7 +7,6 @@ dbcrawlers.stockpricecrawler.StockPriceCrawler
    :members:
 
    
-
    
       ..automethod:: StockPriceCrawler.__init__
       ..automethod:: StockPriceCrawler.get_stock_price
@@ -23,5 +22,4 @@ dbcrawlers.stockpricecrawler.StockPriceCrawler
       ~StockPriceCrawler.set_code
       ~StockPriceCrawler.set_daterange
    
-
    
