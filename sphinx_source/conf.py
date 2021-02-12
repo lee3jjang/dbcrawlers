@@ -90,6 +90,8 @@ html_theme_options = {
     'repo_name': 'dbcrawlers',
     'repo_type': 'github',
     'logo_icon': '&#xe80e',
+    'globaltoc_depth': -1,
+    'globaltoc_collapse': True,
     "master_doc": False,
     'html_minify': False,
     'css_minify': False,
@@ -97,7 +99,6 @@ html_theme_options = {
     'google_analytics_account': 'UA-XXXXX',
     'version_info': {
       "release": "",
-      "development": "devel",
    },
 }
 
