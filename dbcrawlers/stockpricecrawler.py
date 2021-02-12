@@ -87,7 +87,7 @@ class StockPriceCrawler(object):
             while(True):
                 url = f'https://finance.naver.com/item/sise_day.nhn?code={code}&page={page}'
                 headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"}
-                res = requests.get(url, headers=headers, verify=False)
+                res = requests.get(url, headers=headers, verify=True)
                 html = res.text
                 data = pd.read_html(html)[0].dropna()     
                            

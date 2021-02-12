@@ -12,8 +12,6 @@ dbcrawlers의 메인 API는 2가지로 나뉩니다:
 Exchange Rate
 ~~~~~~~~~~~~~
 .. autosummary::
-    :toctree: generated
-    :template: class_custom.rst
 
     ~dbcrawlers.exchangeratecrawler.ExchangeRateCrawler
 
@@ -24,7 +22,5 @@ Exchange Rate
 Stock Price
 ~~~~~~~~~~~
 .. autosummary::
-    :toctree: generated
-    :template: class_custom.rst
 
     ~dbcrawlers.stockpricecrawler.StockPriceCrawler
