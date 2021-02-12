@@ -1,6 +1,11 @@
 Components/Backdrop
 ===================
 
+.. toctree::
+   :maxdepth: 1
+
+   install
+
 .. autosummary::
    :recursive:
    :toctree: _generated

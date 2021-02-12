@@ -82,6 +82,7 @@ html_theme_options = {
     ],
     "heroes": {
         "index": "업무용 크롤러 라이브러리",
+        "install": "인스톨 하는 법",
     },
     'color_primary': 'blue',
     'color_accent': 'light-blue',
