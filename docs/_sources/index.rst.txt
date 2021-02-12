@@ -32,6 +32,7 @@ Citation
 
    install
    api
+   about
 
 Index
 =====
