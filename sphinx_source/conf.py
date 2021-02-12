@@ -82,8 +82,7 @@ html_theme_options = {
         {"href": "https://mail.dbins.co.kr", "title": "외부메일", "internal": False},
     ],
     "heroes": {
-        "index": "업무용 크롤러 라이브러리",
-        "install": "인스톨 하는 법",
+        "index": "업무용 데이터 수집 라이브러리",
     },
     'color_primary': 'blue',
     'color_accent': 'light-blue',
@@ -91,7 +90,7 @@ html_theme_options = {
     'repo_name': 'dbcrawlers',
     'repo_type': 'github',
     'logo_icon': '&#xe80e',
-    'globaltoc_depth': -1,
+    'globaltoc_depth': 3,
     'globaltoc_collapse': True,
     "master_doc": False,
     'html_minify': False,

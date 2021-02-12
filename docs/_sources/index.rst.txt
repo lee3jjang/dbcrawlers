@@ -31,6 +31,7 @@ Citation
    :maxdepth: 1
 
    install
+   api
 
 Index
 =====
