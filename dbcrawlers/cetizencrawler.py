@@ -85,7 +85,7 @@ class NewPhonePriceCrawler(CetizenCrawler):
     --------
     >>> pno_crawler= PnoCrawler()
     >>> pno = pno_crawler.crawling()
-    >>> models = list(pno.loc[lambda df: df.model.str.contains("SM"), 'pno'].unqiue())
+    >>> models = list(pno.loc[lambda df: df.model.str.contains("SM"), 'pno'].unique())
 
     >>> nppc = NewPhonePriceCrawler(models)
     >>> newphone_price = nppc.crawling()
