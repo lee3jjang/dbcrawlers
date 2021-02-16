@@ -5,11 +5,3 @@ dbcrawlers는 업무용 크롤러 라이브러리입니다.
 만나서 반갑습니다.
 
 반가워요~
-
-show me the money
-
-operation cwal
-
-food for thought
-
-power overwhelming
