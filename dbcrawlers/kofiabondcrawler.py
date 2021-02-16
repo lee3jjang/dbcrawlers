@@ -107,7 +107,7 @@ class InterestRateCrawler:
         chrome_options.add_argument('disable-gpu')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        driver = webdriver.Chrome(str(Path(__file__).parent /'chromedriver'), options=chrome_options)
+        driver = webdriver.Chrome('chromedriver', options=chrome_options)
         url = 'http://www.kofiabond.or.kr/websquare/websquare.html?w2xPath=/xml/bondint/lastrop/BISLastAskPrc.xml&divisionId=MBIS01010010000000&serviceId=&topMenuIndex=0&w2xHome=/xml/'
         driver.get(url)
 

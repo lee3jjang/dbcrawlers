@@ -79,7 +79,7 @@ class UsedCarPriceCrawler:
         chrome_options.add_argument('disable-gpu')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        driver = webdriver.Chrome(str(Path(__file__).parent / 'chromedriver'), options=chrome_options)
+        driver = webdriver.Chrome('chromedriver', options=chrome_options)
 
         # 폴더 생성
         if not any([s == 'temp' for s in os.listdir(str(Path(__file__).parent))]):
