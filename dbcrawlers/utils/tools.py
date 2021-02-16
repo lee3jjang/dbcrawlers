@@ -46,14 +46,15 @@ def generate_yearmonth(start_yyyymm, end_yyyymm, format=None):
     """
         Description
         -----------
-        기준년월 리스트를 %Y%m 형식으로 생성
+        기준년월 리스트 생성
         
         Example
         -------
-        >> yyyymm_list = generate_yyyymm((2017, 1), (2019, 12))
+        >> yyyymm_list = generate_yyyymm("201701", "201912")
     """
     
-    (start_year, start_month), (end_year, end_month) = start_yyyymm, end_yyyymm
+    start_year, start_month = int(start_yyyymm[:4]), int(start_yyyymm[4:])
+    end_year, end_month = int(end_yyyymm[:4]), int(end_yyyymm[4:])
     yyyymm_list = []
     year_month = datetime(start_year, start_month, 1)
     while(year_month <= datetime(end_year, end_month, 1)):
@@ -63,8 +64,6 @@ def generate_yearmonth(start_yyyymm, end_yyyymm, format=None):
             yyyymm_list.append(year_month.strftime(format))
         year_month += relativedelta(months=1)
     return yyyymm_list
-
-
 
 def generate_enddate(start_yyyymm, end_yyyymm, typ=1):
     """
