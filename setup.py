@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from os.path import abspath, join as pjoin, relpath, split
 
 DISTNAME = 'dbcrawlers'
@@ -19,7 +19,7 @@ setup(
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     url=URL,
-    packages=['dbcrawlers'],
+    packages=find_packages(),
     python_requires=">=3.6",
     zip_safe=False,
 )
